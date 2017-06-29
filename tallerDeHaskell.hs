@@ -1,3 +1,5 @@
+--They range from simple to less simple.
+
 --Los siguientes son ejercicios chicos hechos para el taller de Haskell de Algebra (UBA)
 --Voy a ir comentando de a poco cada uno para describirlos, pero en un principio van de sencillo a menos sencillo
 --import Data.Char
