@@ -188,3 +188,33 @@ Get even numbers from nested lists, without flattening them:
 
 `nestedEvens xxs = [ [ x | x <- xs, even x ] | xs <- xxs ]`
 
+## Tuples
+
+Elements can be of different types. They can contain lists as well.
+
+Use when you know in advance how many components should have. Each tuple size is its own type.
+
+You can't compare two tuples of different sizes.
+
+```haskell
+ghci> fst (8,11)
+8
+ghci> snd ("Wow",False)
+False
+ghci> zip [1 .. 3] [a,b,c]
+[(1,a),(2,b),(3,c)]
+```
+
+Zip will ignore extra elements in the larger list. We can zip finite lists with infinite lists.
+
+This is a common pattern in functional programming. You take a starting set of solutions and then you apply transformations to those solutions and filter them until you get the right ones:
+
+```haskell
+let rightTriangles = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2]
+```
+
+
+
+
+
+
