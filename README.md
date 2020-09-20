@@ -213,8 +213,38 @@ This is a common pattern in functional programming. You take a starting set of s
 let rightTriangles = [ (a,b,c) | c <- [1..10], b <- [1..c], a <- [1..b], a^2 + b^2 == c^2]
 ```
 
+## Types
 
+Haskell has a static type system and type inference.
 
+THe type of every expression is known at compile time. Functions also have types.
 
+Get the type of an expression using ```:t```.
+
+We can give functions an explicittype declaration.
+
+```haskell
+removeNonUppercase :: [Char] -> [Char]
+removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
+
+addThree :: Int -> Int -> Int -> Int
+addThree x y z = x + y + z
+```
+
+There is no special distinction between parameters and return type.
+
+Return type is the last item in the declaration.
+
+`Int` in 32-bit machines is between _-2147483648_ and _2147483647_.
+
+`Integer` is not bounded, but less efficient.
+
+`Float` is a real floating point with single precision. Double, is with double.
+
+`Bool` is a boolean type, True or False.
+
+`Char` represents a character, denoted by single quotes, a list of chars is a string.
+
+Tuples are types but they depend on their length as well on the types of their components.
 
 
