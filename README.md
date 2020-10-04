@@ -221,7 +221,7 @@ THe type of every expression is known at compile time. Functions also have types
 
 Get the type of an expression using ```:t```.
 
-We can give functions an explicittype declaration.
+We can give functions an explicit type declaration.
 
 ```haskell
 removeNonUppercase :: [Char] -> [Char]
@@ -247,4 +247,28 @@ Return type is the last item in the declaration.
 
 Tuples are types but they depend on their length as well on the types of their components.
 
+Types are written in capital case. If `:t` returns `a`, for instance, is a type variable, this means that `a` can be of any type. Functions that have type variables are called polymorphic functions.
 
+### Typeclasses
+
+Similar to an interface that defines behavior.
+
+If a type is part of a typeclass, it supports its behavior.
+
+(==) for the Eq typeclass, tests equality. Types where it makes sense should be members of the Eq class.
+
+Ord is for types that have an ordering.
+
+Show members can be presented as strings.
+
+Read tries to convert a string to a type.
+
+Enum members are sequentially ordered types, they can be enumerated.
+
+Bounded members have upper and lower bounds.
+
+Num is a numeric typeclass. Also Integral and Floating.
+
+Next:
+
+Chapter 4 Syntax in Functions
