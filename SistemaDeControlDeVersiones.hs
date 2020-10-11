@@ -1,8 +1,5 @@
---El siguiente es un TP para el taller de Haskell de la materia Algebra de la UBA
---Proximamente voy a subir las consignas y comentar el código para describirlo
 --El objetivo del TP era realizar una especie de sistema de control de versiones muy sencillo,
 --utilizando el algoritmo de distancia de Levenshtein.
-
 
 -- DATOS Y SHOW
 

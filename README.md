@@ -269,6 +269,33 @@ Bounded members have upper and lower bounds.
 
 Num is a numeric typeclass. Also Integral and Floating.
 
-Next:
+## Pattern Matching
 
-Chapter 4 Syntax in Functions
+Patterns will be checked from top to bottom.
+
+```haskell
+factorial :: (Integral a) => a -> a
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+```
+
+If pattern matching is non-exhaustive, an exception will be raised when an input doesn't match.
+
+```haskell
+length' :: (Num b) => [a] -> b
+length' [] = 0
+length' (_:xs) = 1 + length' xs
+```
+
+Using `@` between a name and a pattern you can reference the whole list.
+
+```haskell
+capital :: String -> String
+capital "" = "Empty string, whoops!"
+capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
+```
+
+---
+
+## 4.2 Guards
+
