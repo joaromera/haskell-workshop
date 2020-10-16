@@ -312,7 +312,7 @@ max' a b
 
 ## where
 
-The keyword `where` goes after the guards.
+The keyword `where` goes after the guards. _These are bindings, a syntactic construct, that lets you bind to variables at the end of a function and the whole function can see them, including its guards._
 
 ```haskell
 initials :: String -> String -> String
@@ -323,4 +323,24 @@ initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
 
 ---
 
+## `let` bindings
+
+With `let` you can bind to variables anywhere, they are also expressions. They don't span across guards and can also be used for pattern matching. The names that are defined in the `let` part are accessible to the expression after the `in` part.
+
+Difference: `let` bindings are expressions, `where` are just syntactic constructs.
+
+```haskell
+ghci> (let a = 100; b = 200; c = 300 in a*b*c, let foo="Hey "; bar = "there!" in foo ++ bar) (6000000,"Hey there!")
+```
+
+Another examples:
+
+```haskell
+calcBmis :: (RealFloat a) => [(a, a)] -> [a]
+calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0]
+```
+
+---
+
+## 4.5 Case expressions
 
