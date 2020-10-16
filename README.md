@@ -299,3 +299,15 @@ capital all@(x:xs) = "The first letter of " ++ all ++ " is " ++ [x]
 
 ## 4.2 Guards
 
+Guards are a way of testing whether some property of a value are true or false. They are indicated by pipes that follow a function's name and its parameters. Basically they are boolean expressions. Usually, the last guard is `otherwise`.
+
+```haskell
+max' :: (Ord a) => a -> a -> a
+max' a b
+    | a > b     = a
+    | otherwise = b
+```
+
+
+
+
