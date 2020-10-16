@@ -308,6 +308,19 @@ max' a b
     | otherwise = b
 ```
 
+---
 
+## where
+
+The keyword `where` goes after the guards.
+
+```haskell
+initials :: String -> String -> String
+initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
+    where (f:_) = firstname
+          (l:_) = lastname
+```
+
+---
 
 
